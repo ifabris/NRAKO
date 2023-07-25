@@ -20,17 +20,38 @@ public class ResizeFilterDecorator extends PhotoDecorator {
         this.newHeight = newHeight;
     }
 
+//    @Override
+//    public BufferedImage download() {
+//        BufferedImage originalImage = super.download();
+//
+//        int width = originalImage.getWidth();
+//        int height = originalImage.getHeight();
+//
+//        BufferedImage resizedImage = new BufferedImage(newWidth, newHeight, originalImage.getType());
+//
+//        Graphics2D graphics2D = resizedImage.createGraphics();
+//        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+//        graphics2D.drawImage(originalImage, 0, 0, newWidth, newHeight, 0, 0, width, height, null);
+//        graphics2D.dispose();
+//
+//        return resizedImage;
+//    }
+    
     @Override
     public BufferedImage download() {
         BufferedImage originalImage = super.download();
+        return resizeImage(originalImage, newWidth, newHeight, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+    }
 
+    // Helper method to resize the image
+    private static BufferedImage resizeImage(BufferedImage originalImage, int newWidth, int newHeight, Object interpolation) {
         int width = originalImage.getWidth();
         int height = originalImage.getHeight();
 
         BufferedImage resizedImage = new BufferedImage(newWidth, newHeight, originalImage.getType());
 
         Graphics2D graphics2D = resizedImage.createGraphics();
-        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+        graphics2D.setRenderingHint(RenderingHints.KEY_INTERPOLATION, interpolation);
         graphics2D.drawImage(originalImage, 0, 0, newWidth, newHeight, 0, 0, width, height, null);
         graphics2D.dispose();
 

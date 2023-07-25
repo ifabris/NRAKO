@@ -28,8 +28,6 @@ public class Logger {
 
     public void logAction(String user, String operation) {
         Date timestamp = new Date();
-        observers.forEach((observer) -> {
-            observer.update(user, timestamp, operation);
-        });
+        observers.forEach(observer -> observer.update(user, timestamp, operation));
     }
 }
