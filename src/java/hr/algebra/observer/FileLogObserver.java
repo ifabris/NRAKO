@@ -27,7 +27,6 @@ public class FileLogObserver implements LogObserver {
         writer.write(logEntry);
         writer.close();
     } catch (IOException e) {
-        // Handle the exception appropriately (e.g., log or throw)
         e.printStackTrace();
     }
 }

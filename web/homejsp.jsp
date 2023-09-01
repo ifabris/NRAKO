@@ -6,6 +6,10 @@
 
 
 
+<%@page import="io.prometheus.client.exporter.HTTPServer"%>
+<%@page import="io.micrometer.core.instrument.Metrics"%>
+<%@page import="io.micrometer.prometheus.PrometheusMeterRegistry"%>
+<%@page import="io.micrometer.prometheus.PrometheusConfig"%>
 <%@page import="hr.algebra.model.Hashtag"%>
 <%@page import="com.sun.javafx.scene.control.skin.VirtualFlow.ArrayLinkedList"%>
 <%@page import="java.sql.Statement"%>

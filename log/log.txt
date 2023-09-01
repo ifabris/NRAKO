@@ -16,3 +16,5 @@
 [Tue Jul 25 15:18:01 CEST 2023] User 'JohnDoe' performed operation: 'AddPost'
 [Tue Jul 25 15:18:48 CEST 2023] User 'JohnDoe' performed operation: 'AddPost'
 [Tue Jul 25 15:22:03 CEST 2023] User 'JohnDoe' performed operation: 'AddPost'
+[Mon Aug 14 15:37:58 CEST 2023] User '8' performed operation: 'EditHashtags'
+[Mon Aug 14 15:38:02 CEST 2023] User '8' performed operation: 'EditHashtags'

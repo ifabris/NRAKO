@@ -1,0 +1,8 @@
+# Use the official GlassFish image with Java 1.8 as a base image
+FROM glassfish:4.1-jdk8
+
+# Copy your application's .war file to the auto-deploy directory of the GlassFish domain
+COPY target/NRAKO.war $GLASSFISH_HOME/glassfish/domains/domain1/autodeploy/
+
+# Expose the port that GlassFish runs on (by default 8080, but change if necessary)
+EXPOSE 8080
